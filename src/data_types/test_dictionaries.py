@@ -90,3 +90,20 @@ def test_dictionary_get():
     assert fruits_dictionary.get('orange') is None
     assert fruits_dictionary.get('orange', 'unknown') == 'unknown'
     assert 'orange' not in fruits_dictionary
+
+
+def test_dictionary_pop():
+    """Remove an entry and return its value with pop()."""
+    fruits_dictionary = {
+        'apple': 'green',
+        'banana': 'yellow',
+    }
+
+    removed_color = fruits_dictionary.pop('apple')
+
+    assert removed_color == 'green'
+    assert 'apple' not in fruits_dictionary
+    assert fruits_dictionary == {'banana': 'yellow'}
+
+    assert fruits_dictionary.pop('orange', 'unknown') == 'unknown'
+    assert fruits_dictionary == {'banana': 'yellow'}
