@@ -57,6 +57,8 @@ def test_list_type():
     assert letters == ['a', 'b', 'C', 'D', 'E', 'f', 'g']
     letters[2:5] = []  # now remove them
     assert letters == ['a', 'b', 'f', 'g']
+    letters[2:] = ['c']
+    assert letters == ['a', 'b', 'c'] # replace a value and remove a value
     # clear the list by replacing all the elements with an empty list
     letters[:] = []
     assert letters == []
