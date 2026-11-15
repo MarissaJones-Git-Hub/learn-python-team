@@ -57,6 +57,8 @@ def test_list_type():
     assert letters == ['a', 'b', 'C', 'D', 'E', 'f', 'g']
     letters[2:5] = []  # now remove them
     assert letters == ['a', 'b', 'f', 'g']
+    letters[2:] = ['c']
+    assert letters == ['a', 'b', 'c'] # replace a value and remove a value
     # clear the list by replacing all the elements with an empty list
     letters[:] = []
     assert letters == []
@@ -153,6 +155,20 @@ def test_list_methods():
         'kiwi',
         'orange',
         'pear',
+    ]
+
+    # list.sort(key=lambda x: len(x), reverse=False)
+    # Sort the items of the list by the length of the strings.
+    fruits_copy.sort(key=lambda x: len(x))
+    assert fruits_copy == [
+        'kiwi',
+        'pear',
+        'apple',
+        'apple',
+        'grape',
+        'banana',
+        'banana',
+        'orange',
     ]
 
     # list.pop([i])
