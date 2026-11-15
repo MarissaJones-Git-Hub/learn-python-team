@@ -157,6 +157,20 @@ def test_list_methods():
         'pear',
     ]
 
+    # list.sort(key=lambda x: len(x), reverse=False)
+    # Sort the items of the list by the length of the strings.
+    fruits_copy.sort(key=lambda x: len(x))
+    assert fruits_copy == [
+        'kiwi',
+        'pear',
+        'apple',
+        'apple',
+        'grape',
+        'banana',
+        'banana',
+        'orange',
+    ]
+
     # list.pop([i])
     # Remove the item at the given position in the list, and return it. If no index is specified,
     # a.pop() removes and returns the last item in the list. (The square brackets around the i in
