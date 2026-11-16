@@ -139,3 +139,19 @@ def test_rectangle_area_example():
     assert rectangle_area(0, 8) == 0
     with pytest.raises(ValueError, match='non-negative'):
         rectangle_area(-2, 5)
+
+
+def average_score(scores):
+    """Return the arithmetic mean of a non-empty sequence of scores."""
+    if not scores:
+        raise ValueError('At least one score is required')
+    return sum(scores) / len(scores)
+
+
+def test_average_score_example():
+    """Demonstrate sequence parameters, return values, and empty-input handling."""
+    assert average_score([80, 90, 100]) == 90
+    assert average_score([0, 100]) == 50
+    assert average_score([-10, 10]) == 0
+    with pytest.raises(ValueError, match='At least one score'):
+        average_score([])
