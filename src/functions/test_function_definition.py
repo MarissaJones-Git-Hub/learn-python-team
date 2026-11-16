@@ -8,6 +8,8 @@ parenthesized list of formal parameters. The statements that form the body of th
 the next line, and must be indented.
 """
 
+import pytest
+
 
 def fibonacci_function_example(number_limit):
     """Generate a Fibonacci series up to number_limit.
@@ -121,3 +123,35 @@ def test_function_definition():
     greet_with_closure = compose_greet_func_with_closure('John')
 
     assert greet_with_closure() == 'Hello there, John!'
+
+
+def rectangle_area(length, width):
+    """Return the area of a rectangle with non-negative dimensions."""
+    if length < 0 or width < 0:
+        raise ValueError('Rectangle dimensions must be non-negative')
+    return length * width
+
+
+def test_rectangle_area_example():
+    """Demonstrate parameters, return values, and input validation."""
+    assert rectangle_area(4, 3) == 12
+    assert rectangle_area(2.5, 1.5) == 3.75
+    assert rectangle_area(0, 8) == 0
+    with pytest.raises(ValueError, match='non-negative'):
+        rectangle_area(-2, 5)
+
+
+def average_score(scores):
+    """Return the arithmetic mean of a non-empty sequence of scores."""
+    if not scores:
+        raise ValueError('At least one score is required')
+    return sum(scores) / len(scores)
+
+
+def test_average_score_example():
+    """Demonstrate sequence parameters, return values, and empty-input handling."""
+    assert average_score([80, 90, 100]) == 90
+    assert average_score([0, 100]) == 50
+    assert average_score([-10, 10]) == 0
+    with pytest.raises(ValueError, match='At least one score'):
+        average_score([])
