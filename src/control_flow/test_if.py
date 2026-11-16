@@ -48,10 +48,11 @@ def test_elif_chain():
     assert conclusion == 'B'
 
 
+
 def test_nested_if():
-    """NESTED IF chain"""
-        
-    number = 9
+    """NESTED IF chain - positive and even example"""
+
+    number = 8
     conclusion = ''
 
     if number >= 0:
@@ -62,4 +63,4 @@ def test_nested_if():
     else:
         conclusion = 'Negative.'
 
-    assert conclusion == 'Positive and odd.'
+    assert conclusion == 'Positive and even.'
