@@ -51,7 +51,7 @@ def test_elif_chain():
 def test_nested_if():
     """NESTED IF chain"""
         
-    number = 9
+    number = 13
     conclusion = ''
 
     if number >= 0:
