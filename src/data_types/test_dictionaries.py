@@ -77,3 +77,33 @@ def test_dictionary():
     assert dictionary_for_string_keys['sape'] == 4139
     assert dictionary_for_string_keys['guido'] == 4127
     assert dictionary_for_string_keys['jack'] == 4098
+
+
+def test_dictionary_get():
+    """Retrieve existing and missing entries with get()."""
+    fruits_dictionary = {
+        'apple': 'green',
+        'banana': 'yellow',
+    }
+
+    assert fruits_dictionary.get('apple') == 'green'
+    assert fruits_dictionary.get('orange') is None
+    assert fruits_dictionary.get('orange', 'unknown') == 'unknown'
+    assert 'orange' not in fruits_dictionary
+
+
+def test_dictionary_pop():
+    """Remove an entry and return its value with pop()."""
+    fruits_dictionary = {
+        'apple': 'green',
+        'banana': 'yellow',
+    }
+
+    removed_color = fruits_dictionary.pop('apple')
+
+    assert removed_color == 'green'
+    assert 'apple' not in fruits_dictionary
+    assert fruits_dictionary == {'banana': 'yellow'}
+
+    assert fruits_dictionary.pop('orange', 'unknown') == 'unknown'
+    assert fruits_dictionary == {'banana': 'yellow'}

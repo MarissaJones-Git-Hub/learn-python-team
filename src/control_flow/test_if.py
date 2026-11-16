@@ -26,3 +26,40 @@ def test_if_statement():
         conclusion = 'Number bigger than or equal to one'
 
     assert conclusion == 'Number bigger than or equal to one'
+
+
+def test_elif_chain():
+    """ELIF chain"""
+        
+    grade = 71
+    conclusion = ''
+    
+    if grade >= 80:
+        conclusion = 'A'
+    elif grade >= 70:
+        conclusion = 'B'
+    elif grade >= 60:
+        conclusion = 'C'
+    elif grade >= 50:
+        conclusion = 'D'
+    else:
+        conclusion = 'F'
+
+    assert conclusion == 'B'
+
+
+def test_nested_if():
+    """NESTED IF chain"""
+        
+    number = 9
+    conclusion = ''
+
+    if number >= 0:
+        if number % 2 == 0:
+            conclusion = 'Positive and even.'
+        else:
+            conclusion = 'Positive and odd.'
+    else:
+        conclusion = 'Negative.'
+
+    assert conclusion == 'Positive and odd.'
