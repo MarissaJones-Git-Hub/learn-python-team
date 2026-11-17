@@ -68,6 +68,10 @@ def test_list_type():
     letters.extend(['e'])
     assert len(letters) == 5
 
+    letters = ['a', 'b', 'c', 'd']
+    letters.pop()  # remove the last element
+    assert len(letters) == 3
+
     # It is possible to nest lists (create lists containing other lists),
     # for example:
     list_of_chars = ['a', 'b', 'c']
