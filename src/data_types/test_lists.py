@@ -58,14 +58,15 @@ def test_list_type():
     letters[2:5] = []  # now remove them
     assert letters == ['a', 'b', 'f', 'g']
     letters[2:] = ['c']
-    assert letters == ['a', 'b', 'c'] # replace a value and remove a value
+    assert letters == ['a', 'b', 'c']  # replace a value and remove a value
     # clear the list by replacing all the elements with an empty list
     letters[:] = []
     assert letters == []
 
     # The built-in function len() also applies to lists
     letters = ['a', 'b', 'c', 'd']
-    assert len(letters) == 4
+    letters.extend(['e'])
+    assert len(letters) == 5
 
     # It is possible to nest lists (create lists containing other lists),
     # for example:
