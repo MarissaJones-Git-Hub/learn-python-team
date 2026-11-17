@@ -50,8 +50,24 @@ def test_elif_chain():
 
 
 def test_nested_if():
-    """NESTED IF chain - positive and even example"""
 
+    """NESTED IF chain - positive odd and even examples"""
+
+    # Student C: positive and odd
+    number = 13
+    conclusion = ''
+
+    if number >= 0:
+        if number % 2 == 0:
+            conclusion = 'Positive and even.'
+        else:
+            conclusion = 'Positive and odd.'
+    else:
+        conclusion = 'Negative.'
+
+    assert conclusion == 'Positive and odd.'
+
+    # Student D: positive and even
     number = 8
     conclusion = ''
 
