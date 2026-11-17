@@ -65,7 +65,8 @@ def test_list_type():
 
     # The built-in function len() also applies to lists
     letters = ['a', 'b', 'c', 'd']
-    assert len(letters) == 4
+    letters.pop()  # remove the last element
+    assert len(letters) == 3
 
     # It is possible to nest lists (create lists containing other lists),
     # for example:
